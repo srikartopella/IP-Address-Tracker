@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- LeafLet's CSS -->
+    <link rel="stylesheet" href="./src/leaflet/leaflet.css" />
+    <!-- LeafLet's CSS -->
+    <!-- Leaflet's JS -->
+    <script src="./src/leaflet/leaflet.js"></script>
+    <!-- Leaflet's JS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <!-- Stylesheet -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>IP Address Tracker - A Frontend Mentor Challenge</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-wrapper">
+        <img
+          draggable="false"
+          src="./images/pattern-bg.png"
+          class="background"
+          alt="Decorated Background Pattern"
+        />
+        <div class="map" id="map"></div>
+        <div class="header">
+          <h1>IP Address Tracker</h1>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="input"
+              id="input"
+              placeholder="Enter IP Address"
+            />
+            <button class="button" id="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="3"
+                  d="M2 1l6 6-6 6"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="address-details">
+            <div class="ip">
+              <h4>IP ADDRESS</h4>
+              <h2 id="ip"></h2>
+            </div>
+            <hr />
+            <div class="location">
+              <h4>LOCATION</h4>
+              <h2 id="location"></h2>
+            </div>
+            <hr />
+            <div class="timezone">
+              <h4>TIMEZONE</h4>
+              <h2 id="timezone"></h2>
+            </div>
+            <hr />
+            <div class="isp">
+              <h4>ISP</h4>
+              <h2 id="isp"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/scripts/index.js"></script>
+  </body>
+</html>
