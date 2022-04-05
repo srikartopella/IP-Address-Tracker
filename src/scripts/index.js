@@ -46,12 +46,13 @@ function makeMap(lat, lon) {
 // this will load according to the availability of ip address
 async function load(ipAddress) {
   if (!ipAddress) {
-    const defaultUrl = "http://ip-api.com/json";
+    const defaultUrl =
+      "https://geo.ipify.org/api/v2/country,city?apiKey=at_zvlQyJ3SVhkIslykrqkOwngOHeaFn";
     await getData(defaultUrl).then((res) => {
       changeUI(res);
     });
   } else {
-    const url = `http://ip-api.com/json/${ipAddress}`;
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_zvlQyJ3SVhkIslykrqkOwngOHeaFn&ipAddress=${ipAddress}`;
     await getData(url).then((data) => {
       changeUI(data);
     });
@@ -60,11 +61,11 @@ async function load(ipAddress) {
 
 // this will change the UI according to the data
 function changeUI(data) {
-  ip.textContent = data.query;
-  locationElement.textContent = data.city;
-  timezone.textContent = data.timezone;
+  ip.textContent = data.ip;
+  locationElement.textContent = `${data.location.region}, ${data.location.city}`;
+  timezone.textContent = data.location.timezone;
   isp.textContent = data.isp;
-  makeMap(data.lat, data.lon);
+  makeMap(data.location.lat, data.location.lng);
 }
 
 // this will load the data
